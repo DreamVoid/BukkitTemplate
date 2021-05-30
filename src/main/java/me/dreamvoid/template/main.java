@@ -9,6 +9,9 @@ import java.io.File;
 
 public class main extends JavaPlugin {
 
+    // 定义变量
+    public static YamlConfiguration config;
+
     @Override
     public void onLoad() { } // 加载插件
 
@@ -18,14 +21,17 @@ public class main extends JavaPlugin {
     @Override
     public void onDisable() { } // 禁用插件
 
-    void LoadConfig() {
+    private void LoadConfig() {
         // 加载配置文件
-        configfile = new File(getDataFolder(), "config.yml");
-        if(!(configfile.exists())){ saveDefaultConfig(); }
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(configfile);
+        File configure = new File(getDataFolder(), "config.yml");
+        if(!(configure.exists())){ saveDefaultConfig(); }
+        config = YamlConfiguration.loadConfiguration(configure);
 
-        if(config.getBoolean("bStats", true)) { Metrics metrics = new Metrics(this, 1234); } //bStats统计
+        // bStats统计
+        if(config.getBoolean("bStats", true)) {
+            int pluginId = 1234;
+            Metrics metrics = new Metrics(this, pluginId);
+        }
     }
 
-    public static File configfile;
 }
