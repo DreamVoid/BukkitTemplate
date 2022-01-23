@@ -3,7 +3,7 @@ author: DreamVoid
 description: ${project.description}
 main: me.dreamvoid.template.main
 version: ${project.version}
-api-version: 1.16
+api-version: 1.13
 prefix: DreamVoidPlugin
 webside: ${project.url}
 commands:
