@@ -1,13 +1,10 @@
 package me.dreamvoid.template;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class main extends JavaPlugin {
-    public static YamlConfiguration config;
-
     @Override
     public void onLoad() {
 
@@ -15,17 +12,14 @@ public class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        saveDefaultConfig(); // 加载配置文件
-        getCommand("some-command").setExecutor(this); // 注册插件命令
+        //saveDefaultConfig(); // 加载配置文件
+        //getCommand("some-command").setExecutor(this); // 注册插件命令
+        //Bukkit.getPluginManager().registerEvents(this,this);
     }
 
     @Override
     public void onDisable() {
 
-    }
-
-    private void LoadConfig() {
-        
     }
 
     @Override
